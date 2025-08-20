@@ -2,6 +2,7 @@ import { Grid, Text, GridItem,Show,useBreakpointValue } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import { useColorMode } from "./components/ui/color-mode";
 import GameGrid from "./components/GameGrid";
+import GenreList from "./components/GenreList";
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
       </GridItem>
       {isLargerThanLg && (
         <GridItem area="aside">
-          Aside
+          <GenreList />
         </GridItem>
       )}
       <GridItem area="main">
