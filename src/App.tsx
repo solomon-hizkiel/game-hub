@@ -13,12 +13,13 @@ function App() {
         base: `"nav" " main"`,
         lg: `"nav nav" "aside main"`, //for large screens devices
       }}
+      templateColumns={{ base: "1fr", lg: "200px 1fr" }}
     >
       <GridItem area="nav" boxSize="60px">
         <NavBar /> 
       </GridItem>
       {isLargerThanLg && (
-        <GridItem area="aside">
+        <GridItem area="aside" paddingX={5} paddingY={5}>
           <GenreList />
         </GridItem>
       )}
