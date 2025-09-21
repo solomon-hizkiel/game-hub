@@ -3,9 +3,13 @@ import NavBar from "./components/NavBar";
 import { useColorMode } from "./components/ui/color-mode";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
+import { useState } from "react";
+import type { Genre } from "./hooks/usGenres";
+
 
 
 function App() {
+  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   const isLargerThanLg = useBreakpointValue({ base: false, lg: true });
   return (
     <Grid
@@ -20,11 +24,11 @@ function App() {
       </GridItem>
       {isLargerThanLg && (
         <GridItem area="aside" paddingX={5} paddingY={5}>
-          <GenreList />
+          <GenreList onSelectGenre={setSelectedGenre}  />
         </GridItem>
       )}
       <GridItem area="main">
-        <GameGrid />
+        <GameGrid selectedGenre={selectedGenre} />
       </GridItem>
     </Grid>
   );
