@@ -3,6 +3,7 @@ import { CanceledError } from "axios";
 import { useState,useEffect } from "react";
 import useData from "./useData";
 import type { Genre } from "./usGenres";
+import type { GameQuery } from "@/App";
 
 export interface Platform{
   id:number;
@@ -17,8 +18,8 @@ export interface Game{
   metacritic:number;
 }
 
-const useGames=(selectedGenre: Genre | null,selectedPlatform:Platform|null) => useData<Game>('/games',{params:{
-  genres:selectedGenre?.id,platform:selectedPlatform?.id
-}},[selectedGenre?.id,selectedPlatform?.id]);
+const useGames=(gameQuery:GameQuery) => useData<Game>('/games',{params:{
+  genres:gameQuery.genre?.id,platform:gameQuery.platform?.id
+}},[gameQuery.genre?.id,gameQuery.platform?.id]);
 
 export default useGames;
