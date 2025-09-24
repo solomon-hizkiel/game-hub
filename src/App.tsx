@@ -1,4 +1,4 @@
-import { Grid, Text, GridItem,Show,useBreakpointValue, HStack } from "@chakra-ui/react";
+import { Grid, Text, GridItem,Show,useBreakpointValue, HStack, Flex, Box } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import { useColorMode } from "./components/ui/color-mode";
 import GameGrid from "./components/GameGrid";
@@ -39,14 +39,16 @@ function App() {
         </GridItem>
       )}
       <GridItem area="main">
-        <HStack gap={5} paddingLeft={2}
+        <Flex  paddingLeft={2}
         marginBottom={2}>
-        <PlatformSelector
-          selectedPlatform={gameQuery.platform}
-          onSelectPlatform={(platform) => setGameQuery({ ...gameQuery, platform })}
-        />
+          <Box marginRight={5}>
+            <PlatformSelector
+              selectedPlatform={gameQuery.platform}
+              onSelectPlatform={(platform) => setGameQuery({ ...gameQuery, platform })}
+            />
+          </Box>
         <SortSelector sortOrder={gameQuery.sortOrder} onSelectSortOrder={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })} />
-        </HStack>
+        </Flex>
         <GameGrid gameQuery={gameQuery} />
       </GridItem>
     </Grid>
