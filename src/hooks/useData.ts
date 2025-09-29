@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import type { Game } from "./useGames";
 import apiClient from "@/services/api-client";
-import { Axios, CanceledError, type AxiosRequestConfig } from "axios";
-import type useGenres from "./usGenres";
+import {  CanceledError, type AxiosRequestConfig } from "axios";
+
 
 
 interface FetchResponse<T>{

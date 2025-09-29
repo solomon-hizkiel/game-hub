@@ -1,4 +1,3 @@
-import useData from "@/hooks/useData";
 import useGenres, { type Genre } from "@/hooks/usGenres";
 import getCroppedImageUrl from "@/services/image-url";
 import {
@@ -9,10 +8,7 @@ import {
   List,
   ListItem,
   Spinner,
-  Text,
 } from "@chakra-ui/react";
-import type { PropsOf } from "@emotion/react";
-import React from "react";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
@@ -27,7 +23,9 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
 
   return (
     <>
-      <Heading fontSize="2xl" marginBottom={3}>Genres</Heading>
+      <Heading fontSize="2xl" marginBottom={3}>
+        Genres
+      </Heading>
       <List.Root>
         {data.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">

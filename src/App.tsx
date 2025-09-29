@@ -1,15 +1,12 @@
 import {
   Grid,
-  Text,
   GridItem,
-  Show,
   useBreakpointValue,
-  HStack,
   Flex,
   Box,
 } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
-import { useColorMode } from "./components/ui/color-mode";
+
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import { useState } from "react";
