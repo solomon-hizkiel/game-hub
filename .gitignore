@@ -24,3 +24,24 @@ dist-ssr
 *.sw?
 
 .vercel
+
+node_modules/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+build/
+.next/
+*.session
+*.session-journal
+.idea/
+.vscode/
+cookies.txt
+.pytest_cache/
+coverage/
+.fin_guardian_credentials.json
+fin_guardian.db
